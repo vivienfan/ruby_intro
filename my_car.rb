@@ -1,11 +1,12 @@
 class MyCar
-  attr_accessor :year, :color, :model, :speed
+  attr_accessor :color, :speed
+  attr_reader :year, :model
 
   def initialize(y, c, m)
-    self.year = y
-    self.color = c
-    self.model = m
-    self.speed = 0
+    @year = y
+    @color = c
+    @model = m
+    @speed = 0
   end
 
   def speed_up
@@ -25,6 +26,14 @@ class MyCar
   def current_speed
     puts "You are now going #{self.speed} mph."
   end
+
+  def repaint(c)
+    self.color = c
+  end
+
+  def info
+    puts "model: #{self.model}, year: #{self.year}, color: #{self.color}"
+  end
 end
 
 lumina = MyCar.new(1997, 'white', 'chevy lumina')
@@ -40,3 +49,6 @@ lumina.speed_up
 lumina.current_speed
 lumina.shut_down
 lumina.current_speed
+
+lumina.repaint('purple')
+lumina.info
