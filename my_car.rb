@@ -31,12 +31,19 @@ class MyCar
     self.color = c
   end
 
-  def info
-    puts "model: #{self.model}, year: #{self.year}, color: #{self.color}"
+  def to_s
+    "model: #{self.model}, year: #{self.year}, color: #{self.color}"
+  end
+
+  def self.gas_mileage(g, m)
+    puts "#{m / g} miles per gallon of gas"
   end
 end
 
+MyCar.gas_mileage(13, 351)
+
 lumina = MyCar.new(1997, 'white', 'chevy lumina')
+puts lumina
 lumina.speed_up
 lumina.current_speed
 lumina.speed_up
@@ -51,4 +58,4 @@ lumina.shut_down
 lumina.current_speed
 
 lumina.repaint('purple')
-lumina.info
+puts lumina
